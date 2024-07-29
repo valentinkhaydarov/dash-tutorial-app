@@ -20,7 +20,6 @@ app.layout = [
     Input('dropdown-selection', 'value')
 )
 def update_graph(value: str):
-    # Updates the graph for the selected country
     plot_data = prepare_plot_data(country=value)
     fig = make_subplots(specs=[[{"secondary_y": True}]])
     fig.add_trace(go.Bar(x=plot_data['year'],
