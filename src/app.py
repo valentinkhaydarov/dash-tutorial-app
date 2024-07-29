@@ -10,7 +10,7 @@ app.layout = [
     html.H1(children='Population by country',
             style={'textAlign':'center'}),
     dcc.Dropdown(options=get_country_list(),
-                 value='germany',
+                 value='Germany',
                  id='dropdown-selection'),
     dcc.Graph(id='graph-content')
 ]
@@ -24,7 +24,7 @@ def update_graph(value: str):
     plot_data = prepare_plot_data(country=value)
     fig = make_subplots(specs=[[{"secondary_y": True}]])
     fig.add_trace(go.Bar(x=plot_data['year'],
-                         y=plot_data['pop_change'],
+                         y=plot_data['pop_diff'],
                          name = "Change",
                          opacity=0.5),
                          secondary_y=True)

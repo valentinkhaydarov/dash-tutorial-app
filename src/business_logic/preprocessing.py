@@ -12,5 +12,5 @@ def prepare_plot_data(country: str) -> pd.DataFrame:
     data = get_population_data()
     country_data = data[data['country']==country]
     plot_data = country_data.copy()
-    plot_data['pop_diff'] = country_data['Pop'].diff()
+    plot_data['pop_diff'] = country_data['pop'].diff()
     return plot_data
